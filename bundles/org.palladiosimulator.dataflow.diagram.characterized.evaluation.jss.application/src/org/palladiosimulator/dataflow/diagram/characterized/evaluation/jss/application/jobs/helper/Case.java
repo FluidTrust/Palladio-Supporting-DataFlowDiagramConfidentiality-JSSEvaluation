@@ -1,6 +1,9 @@
 package org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.helper;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
@@ -12,6 +15,7 @@ public class Case {
     private File dfdViolationModel;
     private Optional<File> queryHelperFile = Optional.empty();
     private File queryFile;
+    private Collection<File> auxiliarFiles = new ArrayList<>();
 
     public String getCaseName() {
         return caseName;
@@ -51,6 +55,14 @@ public class Case {
 
     public void setQueryFile(File queryFile) {
         this.queryFile = queryFile;
+    }
+
+    public void addAuxiliarFile(File file) {
+        this.auxiliarFiles.add(file);
+    }
+
+    public Collection<File> getAuxiliarFiles() {
+        return Collections.unmodifiableCollection(this.auxiliarFiles);
     }
 
     public boolean isValid() {

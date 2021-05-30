@@ -44,7 +44,7 @@ public class SerializeResultsJob<T extends MapHoldingMDSDBlackboard> extends Abs
 
     private final File destinationFolder;
     private final ModelLocation dfdLocation;
-    private final MapValueLocation queryHelperLocation;
+//    private final MapValueLocation queryHelperLocation;
     private final MapValueLocation queryLocation;
     private final MapValueLocation executableProgramLocation;
     private final MapValueLocation solutionLocation;
@@ -58,7 +58,7 @@ public class SerializeResultsJob<T extends MapHoldingMDSDBlackboard> extends Abs
             MapValueLocation resultMetricsLocation, File destinationDir) {
         this.proverFactory = proverFactory;
         this.dfdLocation = dfdLocation;
-        this.queryHelperLocation = queryHelperLocation;
+//        this.queryHelperLocation = queryHelperLocation;
         this.queryLocation = queryLocation;
         this.executableProgramLocation = executableProgramLocation;
         this.solutionLocation = solutionLocation;
@@ -113,9 +113,9 @@ public class SerializeResultsJob<T extends MapHoldingMDSDBlackboard> extends Abs
         File queryFile = new File(destinationFolder, "query.pl");
         Files.writeString(queryFile.toPath(), queryText);
 
-        String queryHelperText = (String) getBlackboard().getValue(queryHelperLocation);
-        File queryHelperFile = new File(destinationFolder, "queryHelper.pl");
-        //Files.writeString(queryHelperFile.toPath(), queryHelperText);
+//        String queryHelperText = (String) getBlackboard().getValue(queryHelperLocation);
+//        File queryHelperFile = new File(destinationFolder, "queryHelper.pl");
+//        Files.writeString(queryHelperFile.toPath(), queryHelperText);
 
         String prologProgramText = (String) getBlackboard().getValue(executableProgramLocation);
         File prologProgramFile = new File(destinationFolder, "program.pl");

@@ -27,6 +27,8 @@ public class CaseJob extends BlackboardBasedWorkflow<MapHoldingMDSDBlackboard> {
         File violationFolder = new File(caseFolder, "violation");
         job.add(new ScenarioWithViolationJob<MapHoldingMDSDBlackboard>(caseToExecute, violationFolder));
 
+        job.add(new CopyFilesJob(caseFolder, caseToExecute.getAuxiliarFiles()));
+        
         return job;
     }
 

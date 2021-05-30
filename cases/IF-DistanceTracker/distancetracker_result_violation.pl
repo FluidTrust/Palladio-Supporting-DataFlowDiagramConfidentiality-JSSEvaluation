@@ -1,0 +1,27 @@
+?- CT_LEVEL = 'Classification (_fCiJk0NEEeq3NrD2DjPidQ)',
+|    CT_CLEARANCE = 'Clearance (_g8Baw0NEEeq3NrD2DjPidQ)',
+|    nodeCharacteristic(P, CT_CLEARANCE, V_CLEAR),
+|    characteristicTypeValue(CT_CLEARANCE, V_CLEAR, N_CLEAR),
+|    inputPin(P, PIN),
+|    characteristic(P, PIN, CT_LEVEL, V_LEVEL, S),
+|    characteristicTypeValue(CT_LEVEL, V_LEVEL, N_LEVEL),
+|    N_LEVEL > N_CLEAR.
+CT_LEVEL = 'Classification (_fCiJk0NEEeq3NrD2DjPidQ)',
+CT_CLEARANCE = 'Clearance (_g8Baw0NEEeq3NrD2DjPidQ)',
+P = 'recordDistance (_LFSAV1GPEeqgwc19jCODXg)',
+V_CLEAR = 'User,TrackingService (_JHaiQFGLEeq8MuaPiZgRhQ)',
+N_CLEAR = 1,
+PIN = 'input (_6P5g0OMIEeqO9NqdRSqKUA)',
+V_LEVEL = 'OnlyDistance (_Kfr8wFGLEeq8MuaPiZgRhQ)',
+S = ['direct distance (_fVgw4OeQEeqWHNdEKcC6Zw)', ['locations (_rleKiVGOEeqgwc19jCODXg)']],
+N_LEVEL = 2 ;
+CT_LEVEL = 'Classification (_fCiJk0NEEeq3NrD2DjPidQ)',
+CT_CLEARANCE = 'Clearance (_g8Baw0NEEeq3NrD2DjPidQ)',
+P = 'DistanceStore (_Y7xPBlGPEeqgwc19jCODXg)',
+V_CLEAR = 'User,TrackingService (_JHaiQFGLEeq8MuaPiZgRhQ)',
+N_CLEAR = 1,
+PIN = 'input (_CBHaYOMJEeqO9NqdRSqKUA)',
+V_LEVEL = 'OnlyDistance (_Kfr8wFGLEeq8MuaPiZgRhQ)',
+S = ['distance (_e82nuVGPEeqgwc19jCODXg)', ['direct distance (_fVgw4OeQEeqWHNdEKcC6Zw)', ['locations (_rleKiVGOEeqgwc19jCODXg)']]],
+N_LEVEL = 2 ;
+false.

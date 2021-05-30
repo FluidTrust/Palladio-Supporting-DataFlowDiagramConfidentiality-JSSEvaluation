@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aggregator="http://www.eclipse.org/cbi/p2repo/2011/aggregator/1.1.0" label="jss-eval-dependencies" buildRoot="target/build" packedStrategy="UNPACK">
+<aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aggregator="http://www.eclipse.org/cbi/p2repo/2011/aggregator/1.1.0" label="jss-eval-dependencies" buildRoot="../target/build" packedStrategy="UNPACK">
   <validationSets label="Eclipse 2020-12">
     <contributions label="Palladio Commons">
       <repositories location="https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/">

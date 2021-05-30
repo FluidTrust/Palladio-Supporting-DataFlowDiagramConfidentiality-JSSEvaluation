@@ -47,6 +47,12 @@ public class ConventionalCaseIdentifier implements CaseIdentifier {
                 c.setQueryFile(f);
             }
         });
+        
+        setters.add((c,f,n) -> {
+            if (n.endsWith(".drawio") || n.endsWith(".pdf") || n.endsWith(".svg")) {
+                c.addAuxiliarFile(f);
+            }
+        });
 
         return Collections.unmodifiableCollection(setters);
     }
