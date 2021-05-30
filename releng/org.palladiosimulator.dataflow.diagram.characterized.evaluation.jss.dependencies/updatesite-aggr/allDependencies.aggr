@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aggregator="http://www.eclipse.org/cbi/p2repo/2011/aggregator/1.1.0" label="jss-eval-dependencies" buildRoot="target/build" packedStrategy="UNPACK">
+  <validationSets label="Eclipse 2020-12">
+    <contributions label="Palladio Commons">
+      <repositories location="https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/">
+        <features name="de.uka.ipd.sdq.workflow.feature.mdsd.feature.group"/>
+        <mapRules xsi:type="aggregator:ExclusionRule" name="org.antlr.runtime" versionRange="4.0.0"/>
+        <mapRules xsi:type="aggregator:ExclusionRule" name="com.google.inject" versionRange="4.0.0"/>
+      </repositories>
+    </contributions>
+    <contributions label="Approach">
+      <repositories location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/nightly/">
+        <features name="org.palladiosimulator.dataflow.diagram.model.feature.feature.group"/>
+        <features name="org.palladiosimulator.dataflow.dictionary.model.feature.feature.group"/>
+      </repositories>
+      <repositories location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/nightly/">
+        <features name="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group"/>
+      </repositories>
+      <repositories location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/nightly/"/>
+      <repositories location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/nightly/"/>
+    </contributions>
+    <contributions label="Eclipse">
+      <repositories location="https://download.eclipse.org/releases/2020-12">
+        <features name="org.eclipse.emf.sdk.feature.group"/>
+        <features name="org.eclipse.xtend.sdk.feature.group"/>
+        <features name="org.eclipse.equinox.sdk.feature.group"/>
+        <mapRules xsi:type="aggregator:ExclusionRule" name="com.google.inject" versionRange="4.0.0"/>
+      </repositories>
+    </contributions>
+  </validationSets>
+  <configurations architecture="x86_64"/>
+  <configurations operatingSystem="linux" windowSystem="gtk" architecture="x86_64"/>
+  <configurations operatingSystem="macosx" windowSystem="cocoa" architecture="x86_64"/>
+</aggregator:Aggregation>

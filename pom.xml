@@ -13,43 +13,74 @@
 	<version>5.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<repositories>
-		<repository>
-			<id>eclipse-2020-12</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/2020-12/</url>
-		</repository>
-		<repository>
-			<id>palladio-nightly</id>
-			<layout>p2</layout>
-			<url>https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/</url>
-		</repository>
-		<repository>
-			<id>approach-dfd</id>
-			<layout>p2</layout>
-			<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/nightly/</url>
-		</repository>
-		<repository>
-			<id>approach-dfd-confidential</id>
-			<layout>p2</layout>
-			<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/nightly/</url>
-		</repository>
-		<repository>
-			<id>approach-prolog</id>
-			<layout>p2</layout>
-			<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/nightly/</url>
-		</repository>
-		<repository>
-			<id>approach-prolog4j</id>
-			<layout>p2</layout>
-			<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/nightly/</url>
-		</repository>
+	<!-- Usage of profiles (replace xx with id of profile): mvn clean verify -Pxx-->
+	<profiles>
 
-	</repositories>
+		<!-- aggregate all dependencies (required for aggregated build) -->
+		<profile>
+			<id>aggregate</id>
+			<modules>
+				<module>releng/org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.dependencies</module>
+			</modules>
+		</profile>
 
-	<modules>
-		<module>bundles</module>
-		<module>products</module>
-	</modules>
+		<!-- build evaluation product from aggregated dependencies -->
+		<profile>
+			<id>aggregated</id>
+			<repositories>
+				<repository>
+					<id>cached</id>
+					<layout>p2</layout>
+					<url>file://${maven.multiModuleProjectDirectory}/releng/org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.dependencies/target/build/final</url>
+				</repository>
+			</repositories>
+			<modules>
+				<module>bundles</module>
+				<module>products</module>
+			</modules>
+		</profile>
+
+		<!-- build evaluation product from latest sources -->
+		<profile>
+			<id>nightly</id>
+			<repositories>
+				<repository>
+					<id>eclipse-2020-12</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/releases/2020-12/</url>
+				</repository>
+				<repository>
+					<id>palladio-nightly</id>
+					<layout>p2</layout>
+					<url>https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/</url>
+				</repository>
+				<repository>
+					<id>approach-dfd</id>
+					<layout>p2</layout>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/nightly/</url>
+				</repository>
+				<repository>
+					<id>approach-dfd-confidential</id>
+					<layout>p2</layout>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/nightly/</url>
+				</repository>
+				<repository>
+					<id>approach-prolog</id>
+					<layout>p2</layout>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/nightly/</url>
+				</repository>
+				<repository>
+					<id>approach-prolog4j</id>
+					<layout>p2</layout>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/nightly/</url>
+				</repository>
+			</repositories>
+			<modules>
+				<module>bundles</module>
+				<module>products</module>
+			</modules>
+		</profile>
+
+	</profiles>
 
 </project>
