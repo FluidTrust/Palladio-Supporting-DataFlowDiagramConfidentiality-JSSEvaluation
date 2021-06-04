@@ -10,12 +10,17 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.palladiosimulator.dataflow.diagram.characterized.DataFlowDiagramCharacterized.DataFlowDiagramCharacterizedPackage;
+import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.CalculateJaccardMetricJob;
 import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.CaseJob;
 import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.helper.Case;
+import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.helper.CaseGrouper;
+import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.helper.CaseGrouper.CaseGroup;
 import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.helper.ConventionalCaseIdentifier;
+import org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.application.jobs.helper.SameSystemDifferentAnalysisCaseGrouper;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.DataDictionaryCharacterizedPackage;
 
 import de.uka.ipd.sdq.workflow.Workflow;
@@ -33,7 +38,7 @@ public final class FolderTraversalWorkflowBuilder {
         EcorePlugin.ExtensionProcessor.process(null);
         DataFlowDiagramCharacterizedPackage.eINSTANCE.eClass();
         DataDictionaryCharacterizedPackage.eINSTANCE.eClass();
-        
+
         // jobs for individual cases
         ConventionalCaseIdentifier caseIdentifier = new ConventionalCaseIdentifier();
         Collection<Case> foundCases = findCasesByConvention(baseFolder, caseIdentifier);
@@ -41,9 +46,18 @@ public final class FolderTraversalWorkflowBuilder {
             jobSequence.add(new CaseJob(foundCase, destinationFolder));
         }
 
-        // job for collecting metrics
-        //TODO
-        
+        // jobs for case pairs
+        CaseGrouper sameSystemCaseGroups = new SameSystemDifferentAnalysisCaseGrouper();
+        Collection<CaseGroup> caseGroups = sameSystemCaseGroups.groupCases(foundCases)
+            .stream()
+            .filter(c -> c.getCases()
+                .size() > 1)
+            .collect(Collectors.toList());
+        for (CaseGroup caseGroup : caseGroups) {
+            File destinationFile = new File(destinationFolder, caseGroup.getGroupName() + "_jaccard.txt");
+            jobSequence.add(new CalculateJaccardMetricJob(caseGroup.getCases(), destinationFile));
+        }
+
         return new Workflow(jobSequence);
     }
 

@@ -106,6 +106,7 @@
       <plugin id="org.eclipse.emf.codegen.ecore"/>
       <plugin id="org.eclipse.emf.common"/>
       <plugin id="org.eclipse.emf.common.ui"/>
+      <plugin id="org.eclipse.emf.compare"/>
       <plugin id="org.eclipse.emf.ecore"/>
       <plugin id="org.eclipse.emf.ecore.change"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
@@ -178,18 +179,12 @@
       <plugin id="org.eclipse.xtend.lib.macro"/>
       <plugin id="org.eclipse.xtend.typesystem.emf"/>
       <plugin id="org.eclipse.xtext"/>
-      <plugin id="org.eclipse.xtext.builder"/>
       <plugin id="org.eclipse.xtext.common.types"/>
       <plugin id="org.eclipse.xtext.ecore"/>
       <plugin id="org.eclipse.xtext.generator"/>
       <plugin id="org.eclipse.xtext.ide"/>
       <plugin id="org.eclipse.xtext.logging" fragment="true"/>
       <plugin id="org.eclipse.xtext.smap"/>
-      <plugin id="org.eclipse.xtext.ui"/>
-      <plugin id="org.eclipse.xtext.ui.codetemplates"/>
-      <plugin id="org.eclipse.xtext.ui.codetemplates.ide"/>
-      <plugin id="org.eclipse.xtext.ui.codetemplates.ui"/>
-      <plugin id="org.eclipse.xtext.ui.shared"/>
       <plugin id="org.eclipse.xtext.util"/>
       <plugin id="org.eclipse.xtext.xbase"/>
       <plugin id="org.eclipse.xtext.xbase.ide"/>
@@ -209,7 +204,6 @@
       <plugin id="org.palladiosimulator.supporting.prolog.api"/>
       <plugin id="org.palladiosimulator.supporting.prolog.ide"/>
       <plugin id="org.palladiosimulator.supporting.prolog.model"/>
-      <plugin id="org.palladiosimulator.supporting.prolog.ui"/>
       <plugin id="org.prolog4j.api"/>
       <plugin id="org.prolog4j.manager"/>
       <plugin id="org.prolog4j.swicli"/>

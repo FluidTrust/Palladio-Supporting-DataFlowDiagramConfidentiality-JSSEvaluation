@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.equinox.app,
  org.palladiosimulator.dataflow.diagram.characterized;bundle-version="0.1.0",
  org.palladiosimulator.supporting.prolog.api;bundle-version="1.0.0",
  org.prolog4j.api;bundle-version="1.0.0",
- org.prolog4j.manager;bundle-version="1.0.0"
+ org.prolog4j.manager;bundle-version="1.0.0",
+ org.eclipse.emf.compare;bundle-version="3.5.3"
 Import-Package: org.apache.commons.cli;version="1.4.0",
  org.apache.commons.lang3;version="3.1.0"
 Bundle-ActivationPolicy: lazy

@@ -24,6 +24,7 @@
         <features name="org.eclipse.emf.sdk.feature.group"/>
         <features name="org.eclipse.xtend.sdk.feature.group"/>
         <features name="org.eclipse.equinox.sdk.feature.group"/>
+        <features name="org.eclipse.emf.compare.feature.group"/>
         <mapRules xsi:type="aggregator:ExclusionRule" name="com.google.inject" versionRange="4.0.0"/>
       </repositories>
     </contributions>

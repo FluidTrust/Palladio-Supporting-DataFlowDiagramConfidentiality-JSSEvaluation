@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if ! command -v mvn &> /dev/null
 then
     echo "Maven is required to build the evaluation package."
@@ -21,7 +23,7 @@ fi
 # Build artefacts
 mvn clean package -Paggregate
 mvn clean package -Paggregated
-rm -r target
+rm -rf target
 
 # Archive source code
 mkdir -p target/sources
@@ -50,6 +52,11 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     EXECUTABLE=macosx/cocoa/x86_64/Eclipse.app/Contents/MacOS/eclipse
 fi
 products/org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.product/target/products/org.palladiosimulator.dataflow.diagram.characterized.evaluation.jss.product/$EXECUTABLE -f target/cases -d target/results
+
+# Create zip file
+cd target
+zip -r dataset.zip ./*
+cd ..
 
 # Print message
 echo
