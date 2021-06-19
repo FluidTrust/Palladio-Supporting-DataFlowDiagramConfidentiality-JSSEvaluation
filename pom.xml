@@ -52,27 +52,27 @@
 				<repository>
 					<id>palladio-nightly</id>
 					<layout>p2</layout>
-					<url>https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/</url>
+					<url>https://updatesite.palladio-simulator.com/palladio-build-updatesite/releases/5.0.0/</url>
 				</repository>
 				<repository>
 					<id>approach-dfd</id>
 					<layout>p2</layout>
-					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/nightly/</url>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/releases/0.1.0</url>
 				</repository>
 				<repository>
 					<id>approach-dfd-confidential</id>
 					<layout>p2</layout>
-					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/nightly/</url>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/releases/0.1.0/</url>
 				</repository>
 				<repository>
 					<id>approach-prolog</id>
 					<layout>p2</layout>
-					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/nightly/</url>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/releases/4.4.0/</url>
 				</repository>
 				<repository>
 					<id>approach-prolog4j</id>
 					<layout>p2</layout>
-					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/nightly/</url>
+					<url>https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/releases/1.1.0/</url>
 				</repository>
 			</repositories>
 			<modules>

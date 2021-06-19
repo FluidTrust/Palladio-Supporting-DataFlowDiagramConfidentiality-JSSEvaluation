@@ -27,10 +27,10 @@ rm -rf target
 
 # Archive source code
 mkdir -p target/sources
-git clone --depth 1 https://github.com/FluidTrust/Palladio-Supporting-Prolog target/sources/Prolog
-git clone --depth 1 https://github.com/FluidTrust/Palladio-Supporting-Prolog4J target/sources/Prolog4J
-git clone --depth 1 https://github.com/FluidTrust/Palladio-Supporting-DataFlowDiagram target/sources/DataFlowDiagram
-git clone --depth 1 https://github.com/FluidTrust/Palladio-Supporting-DataFlowDiagramConfidentiality target/sources/DataFlowDiagramConfidentiality
+git clone --depth 1 --branch 4.4.0 https://github.com/FluidTrust/Palladio-Supporting-Prolog target/sources/Prolog
+git clone --depth 1 --branch 1.1.0 https://github.com/FluidTrust/Palladio-Supporting-Prolog4J target/sources/Prolog4J
+git clone --depth 1 --branch 0.1.0 https://github.com/FluidTrust/Palladio-Supporting-DataFlowDiagram target/sources/DataFlowDiagram
+git clone --depth 1 --branch 0.1.0 https://github.com/FluidTrust/Palladio-Supporting-DataFlowDiagramConfidentiality target/sources/DataFlowDiagramConfidentiality
 git clone --depth 1 https://github.com/FluidTrust/Palladio-Supporting-DataFlowDiagramConfidentiality-JSSEvaluation target/sources/Evaluation
 
 # Archive dependencies (binary)
